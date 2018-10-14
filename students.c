@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include "students.h"
 #include "dynarray.h"
+#include <stdlib.h>
 
 /*
  * This function should allocate and initialize a single student struct with
