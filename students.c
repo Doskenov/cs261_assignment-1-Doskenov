@@ -27,12 +27,12 @@
  *   initialized with the values provided.
  */
 
-struct student* create_student(char* name, int id, float gpa);
+//struct student* create_student(char* name, int id, float gpa);
 
-struct student {
-  char* name;
-  int id;
-  float gpa;
+struct student* s = malloc(sizeof(struct student)) {
+  s->name malloc (((1+ strlen(name) sizeof(char))));
+  s->id;
+  s->gpa;
 
 return s;
 };
