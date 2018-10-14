@@ -8,7 +8,6 @@
  */
 
 #include <stdio.h>
-
 #include "students.h"
 #include "dynarray.h"
 
@@ -28,19 +27,15 @@
  *   initialized with the values provided.
  */
 
- struct student {
-    char* name;
-    int id;
-    float gpa;
- }
+struct student* create_student(char* name, int id, float gpa);
 
-struct student* create_student(char* name, int id, float gpa) {
-  struct student* malloc(student(sizeof(struct student));
-  s ->name = malloc(((1 + strlen(name)) * sizeof(char)));
-  S ->id;
-  s ->gpa;
-  return s;
-}
+struct student {
+  char* name;
+  int id;
+  float gpa;
+
+return s;
+};
 
 
 /*
