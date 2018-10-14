@@ -40,12 +40,12 @@
  // };
 //struct student* create_student(char* name, int id, float gpa);
 struct student* create_student(char* name, int id, float gpa) {
-  struct student* s=malloc(sizeof(struct student));
-    s->name = malloc((strlen(name)+1)*sizeof(char));
+  struct student* st=malloc(sizeof(struct student));
+    st->name = malloc((strlen(name)+1)*sizeof(char));
     strncpy(s->name, name, strlen(name+1));
-    s->id = id;
-    s->gpa = gpa;
-    return s;
+    st->id = id;
+    st->gpa = gpa;
+    return st;
 };
 
 
@@ -96,7 +96,13 @@ void free_student(struct student* student) {
  */
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
-  return NULL;
+      int i;
+      struct dynarray* dar = dynnarray_create();
+      for (i=0; i<num_students; i++) {
+          struct student* s = create_student(names[i], ids[i], gpas[i]);
+          dynarray_insert(dar, -1, s);
+      }
+  return dar;
 }
 
 
