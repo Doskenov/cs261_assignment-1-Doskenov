@@ -11,6 +11,10 @@
 #include "students.h"
 #include "dynarray.h"
 #include <stdlib.h>
+#include <assert.h>
+#include <strings.h>
+#include <string.h>
+
 
 /*
  * This function should allocate and initialize a single student struct with
@@ -28,14 +32,20 @@
  *   initialized with the values provided.
  */
 
+
+ // struct student {
+ //   char* name;
+ //   int id;
+ //   float gpa;
+ // };
 //struct student* create_student(char* name, int id, float gpa);
-
-struct student* s = malloc(sizeof(struct student)) {
-  s->name malloc (((1+ strlen(name) sizeof(char))));
-  s->id;
-  s->gpa;
-
-return s;
+struct student* create_student(char* name, int id, float gpa) {
+        struct student* s = malloc(sizeof(struct student));
+        s->name malloc ((strlen(name)+1)*sizeof(char));
+        strncpy(s->name, name strlen(name+1));
+        s->id = id;
+        s->gpa = gpa;
+        return s;
 };
 
 
