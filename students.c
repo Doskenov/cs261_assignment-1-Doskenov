@@ -60,7 +60,7 @@ struct student* create_student(char* name, int id, float gpa) {
  *     as well as memory allocated for the struct itself.
  */
 void free_student(struct student* student) {
-  free(student->name));
+  free(student->name);
   free(student);
 }
 
