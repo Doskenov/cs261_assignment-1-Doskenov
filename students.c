@@ -3,8 +3,8 @@
  * the assignment.  Make sure to add your name and @oregonstate.edu email
  * address below:
  *
- * Name:
- * Email:
+ * Name: Bakhtiyar Doskenov
+ * Email: doskenob@oregonstate.edu
  */
 
 #include <stdio.h>
@@ -27,6 +27,13 @@
  *   Should return a newly-allocated student structure whose fields are
  *   initialized with the values provided.
  */
+
+ struct student {
+    char* name;
+    int id;
+    float gpa;
+ }
+
 struct student* create_student(char* name, int id, float gpa) {
   struct student* malloc(student(sizeof(struct student));
   s ->name = malloc(((1 + strlen(name)) * sizeof(char)));
