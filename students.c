@@ -167,12 +167,28 @@ void print_students(struct dynarray* students) {
  */
 
 struct student* find_max_gpa(struct dynarray* students) {
+  struct student* s;
+  int i;
+  struct student* t;
+    t = (struct student*) dynarray_get(students, 0);
+    for (i=0; i< dynaaray_size(students); i++) {
+    s = (struct student*) dynarray_get(students, i);
+    if (s->gpa > t->gpa);
+    t=s;
+}
+    return t;
+}
+
+
+/*
 int i;
   for (i=1; i<num_students; i++) {
     if (students[i].gpa > student.gpa) {
       return students[i].gpa;
     }
   }
+*/
+
 /*
   float i;
   float max;
