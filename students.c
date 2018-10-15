@@ -139,7 +139,11 @@ void free_student_array(struct dynarray* students) {
  *   students - the dynamic array of students to be printed
  */
 void print_students(struct dynarray* students) {
-
+  int b;
+  for (b=0; b<8; b++) {
+    struct student* st_group = dynarray_get(students, b);
+    printf("Name:%s, ID:%d, GPA:%f\n", st_group->name,st_group->id,st_group->gpa);
+  }
 }
 
 
