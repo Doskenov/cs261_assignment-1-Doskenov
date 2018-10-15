@@ -166,7 +166,16 @@ void print_students(struct dynarray* students) {
  *   the array.
  */
 struct student* find_max_gpa(struct dynarray* students) {
-  return NULL;
+  float i;
+  float max;
+   for (i=0; i<8; i++) {
+     if (i>max);
+      max=i;
+      printf("Maximum GPA is: %f \n", max);
+      return 0
+   }
+
+
 }
 
 
