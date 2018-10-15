@@ -235,9 +235,18 @@ void print_max_gpa(struct dynarray* students) {
  *   the array.
  */
 struct student* find_min_gpa(struct dynarray* students) {
-  return NULL;
+  struct student* s;
+  int i;
+  struct student* t;
+    t = (struct student*) dynarray_get(students, 0);
+    for (i=0; i< dynarray_size(students); i++) {
+    s = (struct student*) dynarray_get(students, i);
+    if (s->gpa < t->gpa) {
+    t=s;
 }
-
+}
+    return t;
+}
 
 /*
  * This function should sort the students stored in a dynamic array by
