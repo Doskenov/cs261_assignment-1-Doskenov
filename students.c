@@ -121,6 +121,11 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
  *     is to be freed
  */
 void free_student_array(struct dynarray* students) {
+ int i;
+ for (i=0; i<=TESTING_NAMES; i++) {
+   free_student(dynarray_get(students, p));
+ }
+ dynarray_free(students);
 
 }
 
