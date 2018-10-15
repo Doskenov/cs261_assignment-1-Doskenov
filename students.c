@@ -142,7 +142,8 @@ void print_students(struct dynarray* students) {
   int b;
   for (b=0; b<8; b++) {
     struct student* st_group = dynarray_get(students, b);
-    printf("Name:%s, ID:%d, GPA:%f\n", st_group->name,st_group->id,st_group->gpa);
+    printf("\x1b[33m" " *Name:* %s, ID:%d, GPA:%f\n" "\x1b[0m", st_group->name,st_group->id,st_group->gpa);
+
   }
 }
 
@@ -209,5 +210,5 @@ struct student* find_min_gpa(struct dynarray* students) {
  *     returns, this array should be sorted by descending GPA.
  */
 void sort_by_gpa(struct dynarray* students) {
-return NULL;
+
 }
