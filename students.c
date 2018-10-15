@@ -165,21 +165,29 @@ void print_students(struct dynarray* students) {
  *   instead return the pointer to the student struct that's already stored in
  *   the array.
  */
-/*
+
 struct student* find_max_gpa(struct dynarray* students) {
+int i;
+  for (i=1; i<num_students; i++) {
+    if (students[i].gpa > student.gpa) {
+      return students[i].gpa;
+    }
+  }
+/*
   float i;
   float max;
    for (i=0; i<8; i++) {
      if (i>max);
       max=i;
       printf("Maximum GPA is: %f \n", max);
-      return 0
-   }
-
+*/
+    //  return 0
+//   }
 
 }
-*/
 
+
+/*
 void print_max_gpa(struct dynarray* students) {
   int m;
   for (m=0; m<8; m++) {
@@ -189,6 +197,8 @@ void print_max_gpa(struct dynarray* students) {
 
   }
 }
+*/
+
 
 /*
  * This function should return a pointer to the student in a given array with
