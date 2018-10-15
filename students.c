@@ -209,5 +209,5 @@ struct student* find_min_gpa(struct dynarray* students) {
  *     returns, this array should be sorted by descending GPA.
  */
 void sort_by_gpa(struct dynarray* students) {
-
+return NULL;
 }
