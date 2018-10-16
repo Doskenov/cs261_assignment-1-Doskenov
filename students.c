@@ -145,6 +145,7 @@ void print_students(struct dynarray* students) {
   for (b=0; b<8; b++) { //in test.c there is 8 students, so i just write 8 instead of num_students
     struct student* st_group = dynarray_get(students, b);
     printf("\x1b[33m" " *Name:* %-20s, ID:%d, GPA:%f\n" "\x1b[0m", st_group->name,st_group->id,st_group->gpa);
+    //need to find out how to leave "," and then tob text
 
   }
 }
@@ -268,5 +269,20 @@ struct student* find_min_gpa(struct dynarray* students) {
  *     returns, this array should be sorted by descending GPA.
  */
 void sort_by_gpa(struct dynarray* students) {
+  struct student* beststud
+  struct student* worststud
+  struct student* compare
+  int a;
+  int b;
+    for (a=0; a < dynarray_size(students)-1; a++) {
+        for (b=0; b < dynarray_size(students)-1; b++){
+          beststud = (struct students*)dynarray_get (students, b)
+          worststud = (struct students*)dynarray_get (students, b+1);
+          if (worststud->gpa > beststud->gpa)
+        }
+            compare = beststud;
+              dynarray_set(students, b, worststud);
+              dynarray_set(students, b+1, worststud);
+    }
 
 }
