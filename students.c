@@ -40,11 +40,12 @@
  // };
 //struct student* create_student(char* name, int id, float gpa);
 struct student* create_student(char* name, int id, float gpa) {
-  struct student* st=malloc(sizeof(struct student));
-    st->name = malloc((strlen(name)+1)*sizeof(char));
-    strncpy(st->name, name, strlen(name+1));
-    st->id = id;
-    st->gpa = gpa;
+    struct student* st=malloc(sizeof(struct student)); //st - variable for student
+      st->name = malloc((strlen(name)+1)*sizeof(char)); //assign memory for a lenght of the name
+        strncpy(st->name, name, strlen(name+1)); //copy names from test.c "name"
+      st->id = id;
+      st->gpa = gpa;
+
     return st;
 };
 
@@ -60,8 +61,9 @@ struct student* create_student(char* name, int id, float gpa) {
  *     as well as memory allocated for the struct itself.
  */
 void free_student(struct student* student) {
-  free(student->name);
-  free(student);
+
+    free(student->name); //free momory for allocated "name"
+    free(student);
 }
 
 
@@ -96,13 +98,13 @@ void free_student(struct student* student) {
  */
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
-      int i;
-      struct dynarray* dar = dynarray_create();
-      for (i=0; i<num_students; i++) {
-          struct student* s = create_student(names[i], ids[i], gpas[i]);
+      int t;                                            //t is for array, read array till end
+      struct dynarray* dar = dynarray_create(); //create dar array
+      for (t=0; t<num_students; t++) {   //create students from existing list in test.c from 0 till tail(end)
+          struct student* s = create_student(names[t], ids[t], gpas[t]);
           dynarray_insert(dar, -1, s);
       }
-  return dar;
+    return dar;
 }
 
 
@@ -121,11 +123,11 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
  *     is to be freed
  */
 void free_student_array(struct dynarray* students) {
- int i;
- for (i=0; i<8; i++) {
-   free_student(dynarray_get(students, i));
- }
- dynarray_free(students);
+  int i;
+    for (i=0; i<8; i++) {
+      free_student(dynarray_get(students, i));
+    }
+    dynarray_free(students);
 
 }
 
@@ -140,7 +142,7 @@ void free_student_array(struct dynarray* students) {
  */
 void print_students(struct dynarray* students) {
   int b;
-  for (b=0; b<8; b++) {
+  for (b=0; b<8; b++) { //in test.c there is 8 students, so i just write 8 instead of num_students
     struct student* st_group = dynarray_get(students, b);
     printf("\x1b[33m" " *Name:* %s, ID:%d, GPA:%f\n" "\x1b[0m", st_group->name,st_group->id,st_group->gpa);
 
