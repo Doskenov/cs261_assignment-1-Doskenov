@@ -269,20 +269,21 @@ struct student* find_min_gpa(struct dynarray* students) {
  *     returns, this array should be sorted by descending GPA.
  */
 void sort_by_gpa(struct dynarray* students) {
-  struct student* beststud
-  struct student* worststud
-  struct student* compare
+  struct student* beststud;
+  struct student* worststud;
+  struct student* compare;
   int a;
   int b;
     for (a=0; a < dynarray_size(students)-1; a++) {
         for (b=0; b < dynarray_size(students)-1; b++){
-          beststud = (struct students*)dynarray_get (students, b)
-          worststud = (struct students*)dynarray_get (students, b+1);
-          if (worststud->gpa > beststud->gpa)
-        }
+          beststud = (struct student*)dynarray_get (students, b);
+          worststud = (struct student*)dynarray_get (students, b+1);
+          if (worststud->gpa > beststud->gpa){
+
             compare = beststud;
               dynarray_set(students, b, worststud);
-              dynarray_set(students, b+1, worststud);
+              dynarray_set(students, b+1, compare);
+          }
+        }
     }
-
 }
