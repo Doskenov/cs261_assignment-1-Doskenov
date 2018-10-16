@@ -144,7 +144,7 @@ void print_students(struct dynarray* students) {
   int b;
   for (b=0; b<8; b++) { //in test.c there is 8 students, so i just write 8 instead of num_students
     struct student* st_group = dynarray_get(students, b);
-    printf("\x1b[33m" " *Name:* %s, ID:%d, GPA:%f\n" "\x1b[0m", st_group->name,st_group->id,st_group->gpa);
+    printf("\x1b[33m" " *Name:* %-20s, ID:%d, GPA:%f\n" "\x1b[0m", st_group->name,st_group->id,st_group->gpa);
 
   }
 }
@@ -169,14 +169,14 @@ void print_students(struct dynarray* students) {
  */
 
 struct student* find_max_gpa(struct dynarray* students) {
+int i;
   struct student* s;
-  int i;
   struct student* t;
-    t = (struct student*) dynarray_get(students, 0);
-    for (i=0; i< dynarray_size(students); i++) {
-    s = (struct student*) dynarray_get(students, i);
-    if (s->gpa > t->gpa) {
-    t=s;
+      t = (struct student*) dynarray_get(students, 0);
+        for (i=0; i< dynarray_size(students); i++) {
+          s = (struct student*) dynarray_get(students, i);
+          if (s->gpa > t->gpa) {
+            t=s;
 }
 }
     return t;
@@ -237,14 +237,14 @@ void print_max_gpa(struct dynarray* students) {
  *   the array.
  */
 struct student* find_min_gpa(struct dynarray* students) {
-  struct student* s;
   int i;
+  struct student* s;
   struct student* t;
     t = (struct student*) dynarray_get(students, 0);
-    for (i=0; i< dynarray_size(students); i++) {
-    s = (struct student*) dynarray_get(students, i);
-    if (s->gpa < t->gpa) {
-    t=s;
+      for (i=0; i< dynarray_size(students); i++) {
+        s = (struct student*) dynarray_get(students, i);
+        if (s->gpa < t->gpa) {
+          t=s;
 }
 }
     return t;
